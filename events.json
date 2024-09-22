@@ -1,0 +1,202 @@
+{
+    "Elizabeth, CO": {
+      "gardening_calendar": {
+        "hardiness_zone": "5b",
+        "average_last_frost_date": "2023-05-15",
+        "average_first_frost_date": "2023-09-28",
+        "planting_schedule": [
+          {
+            "crop": "Tomatoes",
+            "sow_indoors": "2023-03-01",
+            "sow_in_greenhouse": "2023-02-15",
+            "transplant_to_greenhouse": "2023-03-15",
+            "transplant_outdoors": "2023-05-22",
+            "prune": "2023-06-15",
+            "notes": "Start seeds indoors or in greenhouse 8 weeks before last frost. Harden off before transplanting outdoors. Prune suckers for better fruit production."
+          },
+          {
+            "crop": "Peppers",
+            "sow_indoors": "2023-02-15",
+            "sow_in_greenhouse": "2023-02-01",
+            "transplant_to_greenhouse": "2023-03-15",
+            "transplant_outdoors": "2023-05-29",
+            "notes": "Peppers need warm temperatures; use cloches or row covers if planting outdoors early."
+          },
+          {
+            "crop": "Cucumbers",
+            "sow_in_greenhouse": "2023-04-01",
+            "transplant_to_greenhouse": "2023-04-15",
+            "direct_sow_outdoors": "2023-05-29",
+            "split_plants": "2023-06-15",
+            "notes": "Can be grown in greenhouse for early harvest. Split overcrowded plants to promote growth."
+          },
+          {
+            "crop": "Carrots",
+            "direct_sow_outdoors": "2023-04-01",
+            "succession_planting": "2023-04-22",
+            "notes": "Sow directly outdoors. Thin seedlings to prevent overcrowding."
+          },
+          {
+            "crop": "Lettuce",
+            "sow_in_greenhouse": "2023-02-15",
+            "transplant_to_greenhouse": "2023-03-01",
+            "direct_sow_outdoors": "2023-04-01",
+            "succession_planting": "2023-04-15",
+            "notes": "Can be grown year-round in greenhouse. Prefers cool temperatures."
+          },
+          {
+            "crop": "Perennial Herbs (Thyme, Oregano)",
+            "prune": "2023-03-15",
+            "divide": "2023-04-15",
+            "notes": "Prune in early spring to promote new growth. Divide plants every 3 years."
+          },
+          {
+            "crop": "Roses",
+            "prune": "2023-04-01",
+            "notes": "Prune hybrid teas and floribundas in early spring before new growth."
+          },
+          {
+            "crop": "Fruit Trees (Apple, Pear)",
+            "prune": "2022-12-01",
+            "notes": "Prune to shape and remove dead or diseased branches during dormancy."
+          },
+          {
+            "crop": "Strawberries",
+            "plant_bare_root": "2023-04-15",
+            "mulch": "2023-11-01",
+            "notes": "Plant bare-root strawberries in early spring. Mulch in late fall for winter protection."
+          },
+          {
+            "crop": "Bulbs (Tulips, Daffodils)",
+            "plant_bulbs": "2022-10-01",
+            "divide": "2023-06-01",
+            "notes": "Plant bulbs in fall. Divide overcrowded bulbs after flowering."
+          },
+          {
+            "crop": "Garlic",
+            "plant_cloves": "2022-10-15",
+            "harvest": "2023-07-15",
+            "notes": "Plant garlic cloves in fall for summer harvest."
+          },
+          {
+            "crop": "Spinach",
+            "direct_sow_outdoors": "2023-03-15",
+            "succession_planting": "2023-04-15",
+            "fall_planting": "2023-08-15",
+            "notes": "Prefers cool weather. Fall planting for late harvest."
+          },
+          {
+            "crop": "Pumpkins",
+            "sow_in_greenhouse": "2023-04-15",
+            "transplant_outdoors": "2023-05-29",
+            "notes": "Requires a long growing season. Provide ample space."
+          },
+          {
+            "crop": "Peas",
+            "direct_sow_outdoors": "2023-03-15",
+            "notes": "Cool-season crop. Provide support for climbing varieties."
+          },
+          {
+            "crop": "Beets",
+            "direct_sow_outdoors": "2023-04-01",
+            "succession_planting": "2023-05-01",
+            "notes": "Harvest young for tender greens."
+          },
+          {
+            "crop": "Perennial Flowers (Hostas, Daylilies)",
+            "divide": "2023-09-01",
+            "notes": "Divide perennials in early fall to prevent overcrowding."
+          }
+        ],
+        "notable_events": [
+          {
+            "date": "2023-02-15",
+            "event": "Begin Seed Starting Indoors",
+            "description": "Start seeds indoors for cool-season crops and long-season warm crops."
+          },
+          {
+            "date": "2023-03-01",
+            "event": "Greenhouse Planting Begins",
+            "description": "Ideal time to start planting in unheated greenhouses."
+          },
+          {
+            "date": "2023-04-01",
+            "event": "Soil Workable Outdoors",
+            "description": "Ground thaws, allowing for direct sowing of hardy crops."
+          },
+          {
+            "date": "2023-05-15",
+            "event": "Average Last Spring Frost",
+            "description": "Risk of frost decreases; start transplanting warm-season crops."
+          },
+          {
+            "date": "2023-06-15",
+            "event": "Summer Pruning Begins",
+            "description": "Prune shrubs and trees after spring growth spurt."
+          },
+          {
+            "date": "2023-07-01",
+            "event": "Mid-Season Fertilization",
+            "description": "Apply fertilizer to support fruiting and flowering plants."
+          },
+          {
+            "date": "2023-08-15",
+            "event": "Start Fall Planting",
+            "description": "Begin planting cool-season crops for fall harvest."
+          },
+          {
+            "date": "2023-09-28",
+            "event": "Average First Fall Frost",
+            "description": "Protect sensitive plants or harvest before frost."
+          },
+          {
+            "date": "2023-10-15",
+            "event": "Planting of Spring Bulbs",
+            "description": "Ideal time to plant bulbs for spring flowering."
+          },
+          {
+            "date": "2023-11-01",
+            "event": "Prepare Garden for Winter",
+            "description": "Add compost, mulch, and cover crops to prepare the garden for the cold Colorado winter."
+          },
+          {
+            "date": "2022-12-01",
+            "event": "Begin Dormant Pruning",
+            "description": "Prune trees and shrubs during dormancy to promote health."
+          },
+          {
+            "date": "2023-06-21",
+            "event": "Summer Solstice",
+            "description": "The longest day of the year in the Northern Hemisphere, marking the start of summer."
+          },
+          {
+            "date": "2023-09-23",
+            "event": "Autumn Equinox",
+            "description": "The day when daylight and nighttime are nearly equal, marking the start of fall."
+          },
+          {
+            "date": "2023-12-21",
+            "event": "Winter Solstice",
+            "description": "The shortest day of the year in the Northern Hemisphere, marking the start of winter."
+          },
+          {
+            "date": "2023-10-31",
+            "event": "Halloween",
+            "description": "A holiday celebrated with costumes, trick-or-treating, and spooky themes."
+          },
+          {
+            "date": "2023-11-23",
+            "event": "Thanksgiving (USA)",
+            "description": "An American holiday dedicated to giving thanks, often celebrated with a large meal featuring turkey."
+          },
+          {
+            "date": "2023-12-25",
+            "event": "Christmas",
+            "description": "A major holiday celebrated by Christians and many others, commemorating the birth of Jesus Christ."
+          }
+        
+        ]
+      }
+    }
+  }
+  

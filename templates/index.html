@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    <h1 style="width: 100%; text-align: center;">Garden Journal</h1>
+
+    <div class="px-4 py-5 my-5 text-center">
+        <h2 class="display-5 fw-bold text-body-emphasis">Previous Notes</h2>
+        <p class="lead mb-4">
+            <ul id="notesList" style="list-style-type: none; padding: 0;"></ul>
+        </p>
+        <div class="col-lg-6 mx-auto">
+          <form id="addNoteForm">
+            <textarea name="note" rows="4" style="width: 100%;" placeholder="Enter your garden note here..
+."></textarea>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Add Note</button>
+          </div>
+        </form>
+    </div>
+    </div>
+    
+
+    <script>
+        function fetchNotes() {
+            fetch('/get_notes')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const notesList = document.getElementById('notesList');
+                        notesList.innerHTML = '';
+                        data.notes.forEach(note => {
+                            const li = document.createElement('li');
+                            li.textContent = `${note.note} (${new Date(note.timestamp).toLocaleString()})`;
+                            notesList.appendChild(li);
+                        });
+                    } else {
+                        console.error('Failed to fetch notes');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchNotes);
+
+        document.getElementById('addNoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const note = document.querySelector('textarea[name="note"]').value;
+            const now = new Date();
+            const timestamp = now.toISOString();
+            
+            fetch('/add_note', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({note: note, timestamp: timestamp}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Note added successfully!');
+                    document.querySelector('textarea[name="note"]').value = '';
+                    fetchNotes();  // Refresh the notes list
+                } else {
+                    alert('Failed to add note. Please try again.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+
+    </script>
+    {% endblock %}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+        }
+        .weather-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .weather-info h2, .weather-info h3, .weather-info p {
+            margin: 10px 0;
+        }
+        .weather-info i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="weather-info">
+            <h2>Weather in {{ weather.city }}</h2>
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/3rd%20Set%20-%20Color/{{ weather.icon }}.png" alt="{{ weather.icon }}" class="weather-icon">
+                <h3>{{ weather.temperature|round|int }} &deg;F</h3>
+            </div>
+            {% if weather.temp_min < 40 %}
+                <i class="fas fa-snowflake fa-2x" style="color: #00f;"> Freeze Warning!<br/>Bring in plants and cover tender plants.</i>
+            {% endif %}
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fas fa-temperature-high fa-2x"></i>
+                <p class="mb-0"><strong>High:</strong> {{ weather.temp_max|round|int }} &deg;F</p>
+                <p class="mb-0">&nbsp;&nbsp;&nbsp;</p>
+                <i class="fas fa-temperature-low fa-2x"></i>
+                <p class="mb-0"><strong>Low:</strong> {{ weather.temp_min|round|int }} &deg;F</p>
+            </div>
+            <p>{{ weather.description }}</p>
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fas fa-tint fa-2x"></i>
+                <p class="mb-0"><strong>Humidity:</strong> {{ weather.humidity|round|int }}%</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fas fa-wind fa-2x"></i>
+                <p class="mb-0"><strong>Wind Speed:</strong> {{ weather.wind_speed|round|int }} mph</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fas fa-cloud-rain fa-2x"></i>
+                <p class="mb-0"><strong>Rain Probability:</strong> {{ weather.rain_prob|round|int }}%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="weather-info">
+        <h3>Upcoming Weather</h3>
+        <div class="d-flex justify-content-between overflow-auto">
+            {% for day in weather.days[1:] %}
+                <div class="text-center mx-2">
+                    <p><strong>{{ day.dow }}<br/>{{ day.dom }}</strong></p>
+                    <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/3rd%20Set%20-%20Color/{{ day.icon }}.png" alt="{{ day.icon }}" class="weather-icon" style="width: 50px; height: 50px;">
+                    {% if day.tempmin < 40 %}
+                        <i class="fas fa-snowflake fa-2x" style="color: #00f;"></i>
+                    {% endif %}
+                    <p>{{ day.tempmin|round|int }} - {{ day.tempmax|round|int }}°F</p>
+                    <p><i class="fas fa-tint"></i><br/></nr>{{ day.precipprob|round|int }}%</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="weather-info text-center">
+        <h3>This Day Last Year</h3>
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/3rd%20Set%20-%20Color/{{ historical.icon }}.png" alt="{{ historical.icon }}" class="weather-icon">
+            <p class="mb-0"><strong>High:</strong> {{ historical.temp_max|round|int }} &deg;F</p>
+            <p class="mb-0">&nbsp;&nbsp;&nbsp;</p>
+            <p class="mb-0"><strong>Low:</strong> {{ historical.temp_min|round|int }} &deg;F</p>
+        </div>
+        <p><strong></strong> {{ historical.description }}</p>
+    </div>
+
+    
+    <div class="weather-info text-center">
+        <h3>Gardening Information</h3>
+        {% if events is defined and events %}
+
+            <h4>Notable Events</h4>
+            <ul class="list-unstyled">
+                {% for event, details in events.notable_events.items() %}
+                    <li>
+                        <strong>{{ event }}:</strong> {{ details }}
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <h4>Planting Schedule</h4>
+            <ul class="list-unstyled">
+                {% for crop, details in events.planting_schedule.items() %}
+                    <li>
+                        <strong>{{ crop }}:</strong><br>
+                        {% if details.event_date %}
+                            {{ details.event_date }}
+                        {% endif %}
+                        {% if details.event_type %}
+                            {{ details.event_type }}<br>
+                        {% endif %}
+                        {% if details.sow_indoors %}
+                            Sow Indoors: {{ details.sow_indoors }}
+                        {% endif %}
+                        {% if details.transplant_outdoors %}
+                            Transplant Outdoors: {{ details.transplant_outdoors }}
+                        {% endif %}
+                        {% if details.direct_sow %}
+                            Direct Sow: {{ details.direct_sow }}
+                        {% endif %}
+                        {% if details.notes %}
+                            Notes: {{ details.notes }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No gardening information available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Virtual environment
+venv/
+env/
+new_venv/
+.venv/
+.env/
+
+# Python byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+#DBs
+*.db
+*.db3
+
+#Logs
+*.log
+
+#Temp
+*.tmp
