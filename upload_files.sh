@@ -9,5 +9,6 @@ scp -i ~/.ssh/LightsailDefaultKey-us-west-2.pem '/Users/julianbishop/Library/Mob
 scp -i ~/.ssh/LightsailDefaultKey-us-west-2.pem '/Users/julianbishop/Library/Mobile Documents/com~apple~CloudDocs/Projects/GardenJournal/templates/index.html' ubuntu@44.235.31.125:/home/ubuntu/flask_app/templates/
 scp -i ~/.ssh/LightsailDefaultKey-us-west-2.pem '/Users/julianbishop/Library/Mobile Documents/com~apple~CloudDocs/Projects/GardenJournal/templates/weather.html' ubuntu@44.235.31.125:/home/ubuntu/flask_app/templates/
 scp -i ~/.ssh/LightsailDefaultKey-us-west-2.pem '/Users/julianbishop/Library/Mobile Documents/com~apple~CloudDocs/Projects/GardenJournal/events.json' ubuntu@44.235.31.125:/home/ubuntu/flask_app/
-
+scp -i ~/.ssh/LightsailDefaultKey-us-west-2.pem '/Users/julianbishop/Library/Mobile Documents/com~apple~CloudDocs/Projects/GardenJournal/.env' ubuntu@44.235.31.125:/home/ubuntu/flask_app/
+scp -i ~/.ssh/LightsailDefaultKey-us-west-2.pem '/Users/julianbishop/Library/Mobile Documents/com~apple~CloudDocs/Projects/GardenJournal/upload_files.sh' ubuntu@44.235.31.125:/home/ubuntu/flask_app/
 
