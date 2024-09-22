@@ -74,7 +74,12 @@ def get_notes():
 
 
 def get_weather_data():
-    base_url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Elizabeth%2C%20co?unitGroup=us&include=days&key=UXPDT232ETZ86LY2L8DD2G3JP&contentType=json"
+    api_key = os.environ.get('WEATHER_API_KEY')
+    if not api_key:
+        app.logger.error("Weather API key not found in environment variables")
+        return None
+
+    base_url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Elizabeth%2C%20co?unitGroup=us&include=days&key={api_key}&contentType=json"
 
     response = requests.get(base_url)
     if response.status_code == 200:
@@ -111,7 +116,12 @@ def get_weather_data():
     return None
 
 def get_weather_history(date):
-    base_url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Elizabeth%2Cco/2023-09-16/2023-09-16?unitGroup=us&include=days%2Calerts%2Cevents%2Ccurrent&key=UXPDT232ETZ86LY2L8DD2G3JP&contentType=json"
+    api_key = os.environ.get('WEATHER_API_KEY')
+    if not api_key:
+        app.logger.error("Weather API key not found in environment variables")
+        return None
+
+    base_url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Elizabeth%2Cco/2023-09-16/2023-09-16?unitGroup=us&include=days%2Calerts%2Cevents%2Ccurrent&key={api_key}&contentType=json"
 
     response = requests.get(base_url)
     if response.status_code == 200:
