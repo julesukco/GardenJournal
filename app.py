@@ -93,8 +93,10 @@ def get_weather_data():
             'tempmin': day['tempmin'],
             'tempmax': day['tempmax'],
             'precipprob': day['precipprob'],
-            'icon': day['icon']
-        } for day in data['days'][:15]]  # Limit to 7 days for a week's forecast
+            'icon': day['icon'],
+            'sunrise': day['sunrise'],
+            'sunset': day['sunset']
+        } for day in data['days'][:15]]  # Limit to 15 days for a two-week forecast
 
         print(current_day['icon'])
         return {
@@ -111,6 +113,8 @@ def get_weather_data():
             'snow': current_day['snow'],
             'snow_depth': current_day['snowdepth'],
             'cloud_cover': current_day['cloudcover'],
+            'sunrise': current_day['sunrise'],
+            'sunset': current_day['sunset'],
             'days': days_array
         }
     return None
@@ -214,4 +218,3 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(host='0.0.0.0', port=8080, debug=False)
-

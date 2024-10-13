@@ -65,6 +65,14 @@
                 <i class="fas fa-cloud-rain fa-2x"></i>
                 <p class="mb-0"><strong>Rain Probability:</strong> {{ weather.rain_prob|round|int }}%</p>
             </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fas fa-sun fa-2x"></i>
+                <p class="mb-0"><strong>Sunrise:</strong> {{ weather.sunrise }}</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fas fa-moon fa-2x"></i>
+                <p class="mb-0"><strong>Sunset:</strong> {{ weather.sunset }}</p>
+            </div>
         </div>
     </div>
 
@@ -79,7 +87,9 @@
                         <i class="fas fa-snowflake fa-2x" style="color: #00f;"></i>
                     {% endif %}
                     <p>{{ day.tempmin|round|int }} - {{ day.tempmax|round|int }}°F</p>
-                    <p><i class="fas fa-tint"></i><br/></nr>{{ day.precipprob|round|int }}%</p>
+                    <p><i class="fas fa-tint"></i><br/>{{ day.precipprob|round|int }}%</p>
+                    <p><i class="fas fa-sun"></i> {{ day.sunrise }}</p>
+                    <p><i class="fas fa-moon"></i> {{ day.sunset }}</p>
                 </div>
             {% endfor %}
         </div>
