@@ -94,8 +94,8 @@ def get_weather_data():
             'tempmax': day['tempmax'],
             'precipprob': day['precipprob'],
             'icon': day['icon'],
-            'sunrise': day['sunrise'],
-            'sunset': day['sunset']
+            'sunrise': datetime.strptime(day['sunrise'], '%H:%M:%S').strftime('%I:%M %p'),
+            'sunset': datetime.strptime(day['sunset'], '%H:%M:%S').strftime('%I:%M %p')
         } for day in data['days'][:15]]  # Limit to 15 days for a two-week forecast
 
         print(current_day['icon'])
@@ -113,8 +113,8 @@ def get_weather_data():
             'snow': current_day['snow'],
             'snow_depth': current_day['snowdepth'],
             'cloud_cover': current_day['cloudcover'],
-            'sunrise': current_day['sunrise'],
-            'sunset': current_day['sunset'],
+            'sunrise': datetime.strptime(current_day['sunrise'], '%H:%M:%S').strftime('%I:%M %p'),
+            'sunset': datetime.strptime(current_day['sunset'], '%H:%M:%S').strftime('%I:%M %p'),
             'days': days_array
         }
     return None
